@@ -213,7 +213,7 @@ export default function Step7SlotMachine({ onNext }: Step7SlotMachineProps) {
             }}
             className="w-full py-3.5 px-6 rounded-full bg-[#d32f2f] text-white font-bold text-base shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Claim your prize</span>
+            <span>Reveal your gift ❤️</span>
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         ) : (
