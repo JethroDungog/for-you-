@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'A Romantic Surprise for Lovely ❤️ | Perfect Presents',
   description: 'An interactive romantic journey with memories, puzzles, love letters, and a customized keepsake.',
   keywords: ['romantic gift', 'anniversary surprise', 'interactive love letter', 'monogram necklace'],
-  authors: [{ name: 'Rarz' }],
+  authors: [{ name: 'Cholo' }],
   openGraph: {
     title: 'A Special Surprise for You ❤️',
     description: 'I have a special surprise for you, lovely! Unlock our memories.',

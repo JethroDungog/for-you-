@@ -10,7 +10,7 @@ interface Step2PasscodeProps {
   onNext: () => void;
 }
 
-const CORRECT_CODE = '0327';
+const CORRECT_CODE = '0930';
 
 export default function Step2Passcode({ onNext }: Step2PasscodeProps) {
   const [pin, setPin] = useState<string>('');
@@ -166,7 +166,7 @@ export default function Step2Passcode({ onNext }: Step2PasscodeProps) {
               animate={{ opacity: 1, y: 0 }}
               className="text-xs font-semibold text-emerald-600 flex items-center justify-center gap-1"
             >
-              <Heart className="w-3.5 h-3.5 fill-emerald-500" /> Unlocked! March 27 is forever ours.
+              <Heart className="w-3.5 h-3.5 fill-emerald-500" /> Unlocked! September 30 is forever ours.
             </motion.p>
           )}
         </AnimatePresence>
@@ -238,7 +238,7 @@ export default function Step2Passcode({ onNext }: Step2PasscodeProps) {
             animate={{ opacity: 1, height: 'auto' }}
             className="text-xs text-[#d32f2f] bg-pink-50/80 rounded-lg p-2 mt-1 border border-pink-200/60"
           >
-            🌸 March 27 (Format: <strong>0327</strong>)
+            🌸 September 30 (Format: <strong>0930</strong>)
           </motion.div>
         )}
       </div>

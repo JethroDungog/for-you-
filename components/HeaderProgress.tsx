@@ -15,10 +15,9 @@ const STEP_LABELS = [
   'Anniversary',
   'Photo Puzzle',
   'First Date',
-  'Voice Note',
+  'Video Message',
   'Love Letter',
   'Lucky Spin',
-  'Your Gift',
 ];
 
 export default function HeaderProgress({

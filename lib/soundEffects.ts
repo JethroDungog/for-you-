@@ -188,6 +188,47 @@ export function playReelTick() {
   osc.stop(ctx.currentTime + 0.03);
 }
 
+// Teasing / playful victory music
+export function playTeasingMusic() {
+  if (isMuted) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  // Playful, mischievous boing/bounce melody ("Wah-wah-wah-boing" or sassy swing tune)
+  // Notes: [F4, Ab4, A4, C5, Eb5, D5, Db5, C5] with bouncy staccato syncopation
+  const notes = [
+    { freq: 349.23, time: 0.00, dur: 0.14, type: 'triangle' as OscillatorType, vol: 0.18 }, // F4
+    { freq: 415.30, time: 0.16, dur: 0.14, type: 'triangle' as OscillatorType, vol: 0.18 }, // Ab4
+    { freq: 440.00, time: 0.32, dur: 0.16, type: 'sawtooth' as OscillatorType, vol: 0.15 }, // A4
+    { freq: 523.25, time: 0.50, dur: 0.18, type: 'triangle' as OscillatorType, vol: 0.20 }, // C5
+    { freq: 622.25, time: 0.70, dur: 0.18, type: 'sawtooth' as OscillatorType, vol: 0.16 }, // Eb5
+    { freq: 587.33, time: 0.90, dur: 0.16, type: 'triangle' as OscillatorType, vol: 0.18 }, // D5
+    { freq: 554.37, time: 1.08, dur: 0.16, type: 'triangle' as OscillatorType, vol: 0.18 }, // Db5
+    { freq: 523.25, time: 1.26, dur: 0.45, type: 'sine' as OscillatorType, vol: 0.22 },     // C5 (held)
+    // Sassy cheeky slide at the end
+    { freq: 659.25, time: 1.75, dur: 0.15, type: 'triangle' as OscillatorType, vol: 0.20 }, // E5
+    { freq: 698.46, time: 1.92, dur: 0.35, type: 'sawtooth' as OscillatorType, vol: 0.22 }, // F5
+  ];
+
+  notes.forEach((n) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = n.type;
+    osc.frequency.setValueAtTime(n.freq, ctx.currentTime + n.time);
+
+    gain.gain.setValueAtTime(0, ctx.currentTime + n.time);
+    gain.gain.linearRampToValueAtTime(n.vol, ctx.currentTime + n.time + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + n.time + n.dur);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(ctx.currentTime + n.time);
+    osc.stop(ctx.currentTime + n.time + n.dur);
+  });
+}
+
 // Jackpot victory fanfare
 export function playJackpotSound() {
   if (isMuted) return;

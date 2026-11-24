@@ -80,10 +80,10 @@ export default function Step6LoveLetter({ onNext }: Step6LoveLetterProps) {
           </p>
 
           <div className="flex justify-between items-end pt-2 border-t border-pink-100">
-            <span className="text-[10px] font-mono text-slate-400">March 27, Always</span>
+            <span className="text-[10px] font-mono text-slate-400">September 30, Always</span>
             <div className="text-right">
               <p className="text-[11px] text-slate-500 font-serif">Forever yours,</p>
-              <p className="text-lg font-handwriting font-bold text-[#d32f2f]">Rarz</p>
+              <p className="text-lg font-handwriting font-bold text-[#d32f2f]">Cholo</p>
             </div>
           </div>
         </motion.div>

@@ -2,16 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Gift, Sparkles, Heart, Trophy, ArrowRight } from 'lucide-react';
-import { playClickSound, playReelTick, playJackpotSound } from '@/lib/soundEffects';
+import { Gift, Sparkles, Heart, Trophy, ArrowRight, Flame } from 'lucide-react';
+import { playClickSound, playReelTick, playJackpotSound, playTeasingMusic } from '@/lib/soundEffects';
 import { fireGrandCelebration } from '@/lib/confetti';
 
 interface Step7SlotMachineProps {
   onNext: () => void;
 }
 
-const ICONS = ['💖', '🎁', '💎', '💍', '🌹', '👑'];
-const WINNING_ICONS = ['🎁', '🎁', '🎁'];
+const ICONS = ['💖', '🔥', '💋', '🌶️', '🌹', '👑'];
+const WINNING_ICONS = ['💋', '🔥', '💋'];
 
 export default function Step7SlotMachine({ onNext }: Step7SlotMachineProps) {
   const [reels, setReels] = useState<string[]>(['💖', '💍', '💎']);
@@ -55,7 +55,7 @@ export default function Step7SlotMachine({ onNext }: Step7SlotMachineProps) {
         setReels(WINNING_ICONS);
         setIsSpinning(false);
         setHasWon(true);
-        playJackpotSound();
+        playTeasingMusic();
         fireGrandCelebration();
 
         // Auto transition after 2.6s so user can admire the win
@@ -179,21 +179,25 @@ export default function Step7SlotMachine({ onNext }: Step7SlotMachineProps) {
       </div>
 
       {/* Winning State Announcement */}
-      <div className="h-14 flex items-center justify-center w-full">
+      <div className="min-h-16 flex items-center justify-center w-full my-2">
         <AnimatePresence>
           {hasWon && (
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="flex items-center gap-2 bg-gradient-to-r from-yellow-100 via-pink-100 to-yellow-100 border-2 border-yellow-400 px-5 py-2.5 rounded-full shadow-lg"
+              animate={{ scale: [0.8, 1.1, 1], opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center gap-1.5 bg-gradient-to-r from-rose-100 via-pink-100 to-rose-100 border-2 border-rose-400 px-6 py-3 rounded-2xl shadow-xl w-full"
             >
-              <div className="w-7 h-7 rounded-full bg-[#d32f2f] text-white flex items-center justify-center">
-                <Gift className="w-4 h-4" />
+              <div className="flex items-center gap-2">
+                <span className="text-2xl animate-bounce">💋</span>
+                <span className="font-extrabold text-lg sm:text-xl text-rose-700 tracking-wide">
+                  unli sex hehe 😉🔥
+                </span>
+                <span className="text-2xl animate-bounce">💋</span>
               </div>
-              <span className="font-extrabold text-sm sm:text-base text-slate-800 tracking-wide">
-                CONGRATS. YOU WON.
-              </span>
-              <Trophy className="w-5 h-5 text-yellow-600 fill-yellow-400" />
+              <p className="text-xs font-semibold text-rose-500">
+                You hit the grand jackpot prize, baby! ❤️
+              </p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -209,12 +213,13 @@ export default function Step7SlotMachine({ onNext }: Step7SlotMachineProps) {
             whileTap={{ scale: 0.96 }}
             onClick={() => {
               playClickSound();
+              playTeasingMusic();
               onNext();
             }}
-            className="w-full py-3.5 px-6 rounded-full bg-[#d32f2f] text-white font-bold text-base shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-rose-500 to-[#d32f2f] text-white font-bold text-base shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Reveal your gift ❤️</span>
-            <ArrowRight className="w-5 h-5" />
+            <span>Claim Your Prize ❤️</span>
+            <Heart className="w-5 h-5 fill-white" />
           </motion.button>
         ) : (
           <motion.button

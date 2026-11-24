@@ -85,12 +85,12 @@ export default function Step4Trivia({ onNext }: Step4TriviaProps) {
               setAnswer(e.target.value);
               setErrorMessage(null);
             }}
-            placeholder="school"
+            placeholder=""
             disabled={isUnlocked}
             className={`w-full px-5 py-3.5 rounded-full text-center text-base sm:text-lg font-medium tracking-wide bg-white shadow-sm transition-all outline-none ${
               isUnlocked
                 ? 'border-2 border-emerald-400 text-emerald-700 bg-emerald-50/50'
-                : 'border-2 border-pink-200 focus:border-[#d32f2f] text-slate-800 placeholder:text-slate-300 focus:ring-4 focus:ring-red-100'
+                : 'border-2 border-pink-200 focus:border-[#d32f2f] text-slate-800 placeholder:text-transparent focus:ring-4 focus:ring-red-100'
             }`}
           />
         </motion.div>
