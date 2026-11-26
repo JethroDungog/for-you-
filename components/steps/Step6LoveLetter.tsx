@@ -42,13 +42,13 @@ export default function Step6LoveLetter({ onNext }: Step6LoveLetterProps) {
       </p>
 
       {/* Envelope & Letter Stage */}
-      <div className="relative w-full max-w-[340px] sm:max-w-[360px] h-[340px] flex items-center justify-center mb-6">
+      <div className="relative w-full max-w-[340px] sm:max-w-[360px] h-[390px] flex items-center justify-center mb-6">
         {/* Sliding Letter (Paper) */}
         <motion.div
           initial={{ y: 20, scale: 0.88, opacity: 0 }}
           animate={
             isOpened
-              ? { y: -50, scale: 1, opacity: 1 }
+              ? { y: -85, scale: 1, opacity: 1 }
               : { y: 20, scale: 0.88, opacity: 0 }
           }
           transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
@@ -68,19 +68,27 @@ export default function Step6LoveLetter({ onNext }: Step6LoveLetterProps) {
 
           <p className="text-xs font-serif text-slate-500 italic mb-2">My dearest,</p>
 
-          {/* Main Handwritten Love Quote Required by Prompt */}
-          <div className="my-3 py-1">
-            <p className="text-xl sm:text-2xl font-handwriting font-bold text-slate-800 leading-snug tracking-wide">
-              &quot;I&apos;m in love with you and all your little things. :)&quot;
+          {/* Letter Poem */}
+          <div className="my-2 space-y-2 text-xs sm:text-sm font-serif text-slate-700 leading-relaxed">
+            <p>
+              Habang tumatagal<br />
+              Na di tayo nagkikita,<br />
+              Lalo kong napatutunayang<br />
+              May kulang talaga.
+            </p>
+            <p>
+              Di kumpleto ang saya,<br />
+              Di ramdam ang ligaya.<br />
+              May kulang talaga<br />
+              Sa ara kung wala ka.
+            </p>
+            <p className="font-handwriting font-bold text-base text-[#d32f2f] pt-1">
+              Happy monthsary my love! ❤️
             </p>
           </div>
 
-          <p className="text-xs text-slate-600 font-serif leading-relaxed mb-4">
-            Thank you for being my favorite story, my sweetest smile, and my forever person.
-          </p>
-
           <div className="flex justify-between items-end pt-2 border-t border-pink-100">
-            <span className="text-[10px] font-mono text-slate-400">September 30, Always</span>
+            <span className="text-[10px] font-mono text-slate-400">Always &amp; Forever</span>
             <div className="text-right">
               <p className="text-[11px] text-slate-500 font-serif">Forever yours,</p>
               <p className="text-lg font-handwriting font-bold text-[#d32f2f]">Cholo</p>
