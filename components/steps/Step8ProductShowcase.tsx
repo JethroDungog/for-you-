@@ -302,7 +302,7 @@ export default function Step8ProductShowcase({ onRestart }: Step8ProductShowcase
                 <p className="font-bold text-[#d32f2f] mb-1">Our Journey Summary:</p>
                 <ul className="space-y-1 text-slate-700">
                   <li>🗓️ Anniversary: <strong>March 27 (0327)</strong></li>
-                  <li>🎒 First Met: <strong>School</strong></li>
+                  <li>⛪ First Met: <strong>Simbahan / Church</strong></li>
                   <li>💌 Words: <em>&quot;I&apos;m in love with you and all your little things.&quot;</em></li>
                   <li>🎁 Keepsake: <strong>R &amp; L Monogram Necklace</strong></li>
                 </ul>

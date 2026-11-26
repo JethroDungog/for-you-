@@ -68,7 +68,7 @@ export default function Step5VideoMessage({ onNext }: Step5VideoMessageProps) {
       <div className="w-full relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black/95 aspect-video flex items-center justify-center group">
         <video
           ref={videoRef}
-          src="/gf-video.mp4"
+          src="/Monthsary.mov"
           playsInline
           className="w-full h-full object-contain"
           onEnded={() => {

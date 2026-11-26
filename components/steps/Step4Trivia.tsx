@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, Unlock, HelpCircle, Heart, GraduationCap } from 'lucide-react';
+import { Lock, Unlock, HelpCircle, Heart, Church } from 'lucide-react';
 import { playClickSound, playSuccessChime, playErrorSound } from '@/lib/soundEffects';
 import { fireHeartConfetti } from '@/lib/confetti';
 
@@ -24,8 +24,8 @@ export default function Step4Trivia({ onNext }: Step4TriviaProps) {
     playClickSound();
     const cleanAnswer = answer.trim().toLowerCase();
 
-    // Check if cleanAnswer includes 'school'
-    if (cleanAnswer.includes('school')) {
+    // Check if cleanAnswer includes 'simbahan' or 'church'
+    if (cleanAnswer.includes('simbahan') || cleanAnswer.includes('church')) {
       setIsUnlocked(true);
       setErrorMessage(null);
       playSuccessChime();
@@ -36,7 +36,7 @@ export default function Step4Trivia({ onNext }: Step4TriviaProps) {
     } else {
       setIsShaking(true);
       playErrorSound();
-      setErrorMessage('Hmm, not quite! Think about where our classes were 🎒');
+      setErrorMessage('Hmm, not quite! Think about the place where we pray together ⛪');
       setTimeout(() => {
         setIsShaking(false);
       }, 600);
@@ -114,7 +114,7 @@ export default function Step4Trivia({ onNext }: Step4TriviaProps) {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-xs font-semibold text-emerald-600 flex items-center justify-center gap-1"
               >
-                <Heart className="w-3.5 h-3.5 fill-emerald-500" /> Correct! Back at school ❤️
+                <Heart className="w-3.5 h-3.5 fill-emerald-500" /> Correct! Sa simbahan / church ❤️
               </motion.p>
             )}
           </AnimatePresence>
@@ -149,8 +149,8 @@ export default function Step4Trivia({ onNext }: Step4TriviaProps) {
             animate={{ opacity: 1, height: 'auto' }}
             className="text-xs text-[#d32f2f] bg-pink-50/80 rounded-lg p-2.5 mt-1 border border-pink-200/60 flex items-center gap-1.5"
           >
-            <GraduationCap className="w-4 h-4 shrink-0" />
-            <span>Hint: Where we held our books and backpacks (e.g. <strong>school</strong>)</span>
+            <Church className="w-4 h-4 shrink-0" />
+            <span>Hint: Where we pray and attend mass (e.g. <strong>simbahan</strong> or <strong>church</strong>)</span>
           </motion.div>
         )}
       </div>
